@@ -14,7 +14,8 @@ export const firebaseConfig = environment.firebaseConfig;
 // firebase
 
 import {AngularFireModule} from 'angularfire2'
-import {AngularFirestoreModule} from 'angularfire2/firestore'
+import {AngularFirestoreModule} from 'angularfire2/firestore';
+import { ListaProductosComponent } from './components/lista-productos/lista-productos.component'
 
 
 // Rutas
@@ -22,22 +23,21 @@ const appRoutes: Routes = [
   // administrador
 
   {path: 'panaderias', component: ListaPanaderiasComponent},
-
+{ path: 'productos', component: ListaProductosComponent}
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaPanaderiasComponent
+    ListaPanaderiasComponent,
+    ListaProductosComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule.enablePersistence(),
     AngularFirestoreModule,
-    RouterModule.forRoot([
-      {path: 'panaderias', component: ListaPanaderiasComponent}
-    ]),
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent]

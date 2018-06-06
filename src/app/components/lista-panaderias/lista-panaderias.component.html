@@ -1,5 +1,12 @@
 
 
+<div *ngFor="let panaderia of panaderias|async">
+  <h3>
+    {{panaderia|json}}
+  </h3>
+</div>
+
+
 <div class="row">
   <div class="col mx-0 mx-sm-4 mx-md-5 mx-lg-5 mx-xl-5 mt-5 mb-4">
     <h3>Lista de Panaderias</h3>
@@ -25,7 +32,7 @@
             <th scope="row">{{panaderia.nombre}}</th>
             <th >{{panaderia.direccion}}</th>
             <td >
-              <button (click)="VerProdcutos(i)" class="btn btn-outline-dark">Ver Productos</button>
+              <button (click)="VerProductos(panaderia.nombre)" class="btn btn-outline-dark">Ver Productos</button>
             </td>
           
         
