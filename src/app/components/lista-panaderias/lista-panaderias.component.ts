@@ -27,7 +27,9 @@ export class ListaPanaderiasComponent implements OnInit {
 
   ngOnInit() {
     this.panaderiasCollection= this.afs.collection('Panaderias')//referencia
+ 
     this.panaderias=this.panaderiasCollection.valueChanges()//observable de datos panaderias 
+    console.log(this.panaderias)
   }
 
 }

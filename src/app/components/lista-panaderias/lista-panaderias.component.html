@@ -1,5 +1,37 @@
-<h3>Hola</h3>
 
-<div  *ngFor="let panaderia of panaderias | async" >
- <h3>{{panaderia | json}} </h3>
+
+<div class="row">
+  <div class="col mx-0 mx-sm-4 mx-md-5 mx-lg-5 mx-xl-5 mt-5 mb-4">
+    <h3>Lista de Panaderias</h3>
+  </div>
+</div>
+
+<div class="row main">
+  <!-- Table -->
+  <div   class="container ml-4">
+    <div class="table-responsive">
+      <table class="table table-hover bg-light text-dark">
+        <thead class="thead-light">
+          <tr>
+           
+            <th scope="col">Nombre</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Productos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr   *ngFor="let panaderia of panaderias | async,let i=index">
+           
+            <th scope="row">{{panaderia.nombre}}</th>
+            <th >{{panaderia.direccion}}</th>
+            <td >
+              <button (click)="VerProdcutos(i)" class="btn btn-outline-dark">Ver Productos</button>
+            </td>
+          
+        
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
