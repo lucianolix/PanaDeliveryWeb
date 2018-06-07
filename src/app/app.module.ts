@@ -16,7 +16,8 @@ export const firebaseConfig = environment.firebaseConfig;
 import {AngularFireModule} from 'angularfire2'
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import { ListaProductosComponent } from './components/lista-productos/lista-productos.component';
-import { RegistrarProductoComponent } from './components/registrar-producto/registrar-producto.component'
+import { RegistrarProductoComponent } from './components/registrar-producto/registrar-producto.component';
+import { ModificarProductoComponent } from './components/modificar-producto/modificar-producto.component'
 
 
 // Rutas
@@ -25,7 +26,8 @@ const appRoutes: Routes = [
 
   {path: 'panaderias', component: ListaPanaderiasComponent},
   { path: 'productos', component: ListaProductosComponent},
-  { path: 'registrar', component: RegistrarProductoComponent}
+  { path: 'registrar', component: RegistrarProductoComponent},
+  { path: 'modificar', component: ModificarProductoComponent}
 ]
 
 @NgModule({
@@ -33,7 +35,8 @@ const appRoutes: Routes = [
     AppComponent,
     ListaPanaderiasComponent,
     ListaProductosComponent,
-    RegistrarProductoComponent
+    RegistrarProductoComponent,
+    ModificarProductoComponent
   ],
   imports: [
     BrowserModule,

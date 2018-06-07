@@ -29,8 +29,8 @@ export class ListaProductosComponent implements OnInit {
   var arra = new Array();
 
    var id=JSON.parse(localStorage.getItem('id'))
-   
-   console.log('id que llega a producto',id)
+
+  
 
     var aux=this.afs.collection("Panaderias").doc(id).collection('Productos').snapshotChanges().subscribe(data => {
       
@@ -38,10 +38,10 @@ export class ListaProductosComponent implements OnInit {
 const valores=a.payload.doc.data() 
 const id=a.payload.doc.id
 const productos=a.payload.doc
+console.log('id es de que',id)
 
-var producto =new Producto(valores.nombre,valores.descripcion,valores.cantidad,valores.foto)
 
-arra.push(new Producto(valores.nombre,valores.descripcion,valores.cantidad,valores.foto))
+arra.push(new Producto(id,valores.nombre,valores.descripcion,valores.cantidad,valores.precio,valores.foto))
 
 
 
@@ -60,4 +60,13 @@ agregar(){
   this.router.navigate(['registrar']);
 }
 
+volver(){
+  this.router.navigate(['panaderias']);
+}
+
+irModificarProducto(producto){
+localStorage.setItem('producto a modificar',JSON.stringify(producto))
+
+this.router.navigate(['modificar']);
+}
 }

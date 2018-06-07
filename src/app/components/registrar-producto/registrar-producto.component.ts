@@ -11,7 +11,7 @@ import {Producto} from '/Users/joseguerrero/Documents/Trimestre/Ingenieria de so
 })
 export class RegistrarProductoComponent implements OnInit {
 
-  model = new Producto('','',1,'');
+  model = new Producto('','','',1,'','');
   constructor(
     private afs:AngularFirestore,
     private router: Router
@@ -19,7 +19,7 @@ export class RegistrarProductoComponent implements OnInit {
 
   ngOnInit() {
   }
-  Registrar(nombre,descripcion,cantidad,foto){
+  Registrar(nombre,descripcion,cantidad,precio,foto){
 
 
     var id=JSON.parse(localStorage.getItem('id'))
@@ -29,6 +29,7 @@ export class RegistrarProductoComponent implements OnInit {
       nombre: nombre,
       descripcion: descripcion,
       cantidad: cantidad,
+      precio: precio,
       foto: foto
   })
   this.router.navigate(['productos']);

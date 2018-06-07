@@ -1,11 +1,11 @@
 
                 
 
-<div class="container ">
 
-    <button  type="button"   (click)="agregar()" class="btn btn-outline-dark mt-4 mx-4">Agregar Producto</button>
-</div>
 <div class="row main mt-4 ml-4">
+<div class="container mb-4 mt-4">
+    <h3>Lista Productos</h3>
+  </div>
   <!-- Table -->
   <div   class="container ml-4">
     <div class="table-responsive">
@@ -16,6 +16,7 @@
             <th scope="col">Nombre</th>
             <th scope="col">Precio</th>
             <th scope="col">Cantidad</th>
+            <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -23,13 +24,22 @@
             <td  >{{producto.nombre}}</td>
             <td  >{{producto.precio}} </td>
             <td >{{producto.cantidad}} </td>
-           
+            <td>
+                <button (click)="irModificarProducto(producto)" class="btn btn-sm btn-outline-dark">Modificar</button>
+              </td>
            
   
           </tr>
           
         </tbody>
       </table>
+    </div>
+    <div class="container ">
+        <div class="d-flex">
+        <button  type="button"   (click)="agregar()" class="btn btn-outline-dark mt-4 mx-4 mr-4">Agregar Producto</button>
+
+        <button  type="button"   (click)="volver()" class="btn btn-outline-dark mt-4 mx-4 ml-4" >Volver a Lista Panaderias</button>
+        </div>
     </div>
   </div>
 </div>
