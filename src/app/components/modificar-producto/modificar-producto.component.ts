@@ -55,4 +55,7 @@ export class ModificarProductoComponent implements OnInit {
   })
   this.router.navigate(['productos']);
   }
+  volver(){
+    this.router.navigate(['productos']);
+  }
 }

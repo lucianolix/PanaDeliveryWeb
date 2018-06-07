@@ -34,6 +34,8 @@ export class RegistrarProductoComponent implements OnInit {
   })
   this.router.navigate(['productos']);
 }
-
+volver(){
+  this.router.navigate(['productos']);
+}
   
 }
