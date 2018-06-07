@@ -1,6 +1,34 @@
-
-<div *ngFor="let panaderia of panaderias|async">
+<div *ngFor="let producto of productos|async">
   <h3>
-    {{panaderia|json}}
+    {{producto|json}}
   </h3>
+</div>
+{{producto|json}}
+
+                
+
+<div class="container ">
+
+    <button  type="button"   (click)="agregar()" class="btn btn-outline-dark mt-4 mx-4">Agregar Producto</button>
+</div>
+<div class="row main mt-4 ml-4">
+  <!-- Table -->
+  <div   class="container ml-4">
+    <div class="table-responsive">
+      <table class="table table-hover bg-light text-dark">
+        <thead class="thead-light">
+          <tr>
+           
+            <th scope="col">Nombre</th>
+            <th scope="col">Foto</th>
+            <th scope="col">Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
