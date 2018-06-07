@@ -1,9 +1,3 @@
-<div *ngFor="let producto of productos|async">
-  <h3>
-    {{producto|json}}
-  </h3>
-</div>
-{{producto|json}}
 
                 
 
@@ -20,12 +14,19 @@
           <tr>
            
             <th scope="col">Nombre</th>
-            <th scope="col">Foto</th>
+            <th scope="col">Precio</th>
             <th scope="col">Cantidad</th>
           </tr>
         </thead>
         <tbody>
-          
+           <tr *ngFor="let producto of productos; let i=index">
+            <td  >{{producto.nombre}}</td>
+            <td  >{{producto.precio}} </td>
+            <td >{{producto.cantidad}} </td>
+           
+           
+  
+          </tr>
           
         </tbody>
       </table>

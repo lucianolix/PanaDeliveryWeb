@@ -6,13 +6,7 @@ import { Observable } from 'rxjs';
 import {Producto} from '/Users/joseguerrero/Documents/Trimestre/Ingenieria de software/app-pana/src/app/producto'
 
 
-interface producto{
-  
-  cantidad:number,
-  foto:string,
-  nombre:string
 
-}
 
 @Component({
   selector: 'app-lista-productos',
@@ -22,7 +16,7 @@ interface producto{
 export class ListaProductosComponent implements OnInit {
 
  
-  producto:any[];
+  productos:any[];
   
   constructor(
     private afs:AngularFirestore,
@@ -31,7 +25,11 @@ export class ListaProductosComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+  var arra = new Array();
+
    var id=JSON.parse(localStorage.getItem('id'))
+   
    console.log('id que llega a producto',id)
 
     var aux=this.afs.collection("Panaderias").doc(id).collection('Productos').snapshotChanges().subscribe(data => {
@@ -41,7 +39,11 @@ const valores=a.payload.doc.data()
 const id=a.payload.doc.id
 const productos=a.payload.doc
 
-console.log("valores de productos", valores)
+var producto =new Producto(valores.nombre,valores.descripcion,valores.cantidad,valores.foto)
+
+arra.push(new Producto(valores.nombre,valores.descripcion,valores.cantidad,valores.foto))
+
+
 
 
 })
@@ -50,7 +52,7 @@ console.log("valores de productos", valores)
       return false;
     })
     
-
+this.productos=arra
 
 }
 

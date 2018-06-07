@@ -49,13 +49,14 @@ export class ListaPanaderiasComponent implements OnInit {
      console.log("valores", valores)
      console.log("id de panaderia", id)
      localStorage.setItem('id',JSON.stringify(id))
+     this.redireccion();
      })
          }, err => {
            console.log('Error  producto Component: ', err);
            return false;
          })
 
-    this.redireccion();
+    
     
 
 
