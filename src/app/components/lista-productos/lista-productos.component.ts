@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { map} from 'rxjs/operators';
-import {AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} from 'angularfire2/firestore';
-import { Observable } from 'rxjs';
+
+import {AngularFirestore} from 'angularfire2/firestore';
+
 import {Producto} from '/Users/joseguerrero/Documents/Trimestre/Ingenieria de software/app-pana/src/app/producto'
 
 

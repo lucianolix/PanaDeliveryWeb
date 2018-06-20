@@ -36,7 +36,9 @@ export class ListaPanaderiasComponent implements OnInit {
 
 
   }
-  
+  agregar(){
+    this.router.navigate(['panaderia']);
+  }
   VerProductos(nombre){
 
     var aux=this.afs.collection("Panaderias",ref => ref.where('nombre', '==',nombre)).snapshotChanges().subscribe(data => {
@@ -45,7 +47,8 @@ export class ListaPanaderiasComponent implements OnInit {
        const valores=a.payload.doc.data() 
      const id=a.payload.doc.id
      const productos=a.payload.doc
-     
+     console.log('payload',a.payload)
+
      console.log("valores", valores)
      console.log("id de panaderia", id)
      localStorage.setItem('id',JSON.stringify(id))

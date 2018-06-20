@@ -1,0 +1,51 @@
+
+<div class="row main p-4 p-md-3">
+
+  
+    <div class="container py-5 mt-3 mb-5">
+    
+        
+        <div class="container">
+            <h3>Registrar Panaderia </h3>
+            <form >
+            
+      
+                <div class="form-row">
+                
+                    <div class="form-group col-md-5">
+                        <label>Nombre</label>
+                        <div class="d-flex">
+                          <input type="string" class="form-control" id="nombre" required [(ngModel)]="model.nombre" name="nombre" #nombre="ngModel"  #spy>
+                        </div>
+                      </div>
+                      
+
+                
+                  
+                    <label>Direccion de la Panaderia</label>
+
+                    <!-- this creates a google map on the page with the given lat/lng from -->
+                    <!-- the component as the initial center of the map: -->
+                    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="marker($event)">
+                      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+
+                    </agm-map>
+  
+  
+                  </div>
+            
+  
+                       <div class="d-flex">
+         
+                         <button  type="button"   (click)="Registrar(model.nombre)"  class="btn btn-primary mt-4 mx-4 ml-4">Registrar </button>
+                  
+                         <button  type="button"   (click)="volver()" class="btn btn-success mt-4 mx-4 ml-4" >Volver a lista de Panaderias</button>
+                       </div>
+            </form>
+            
+        </div>
+        
+      
+          
+    </div>
+  </div>

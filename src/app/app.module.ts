@@ -17,8 +17,10 @@ import {AngularFireModule} from 'angularfire2'
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import { ListaProductosComponent } from './components/lista-productos/lista-productos.component';
 import { RegistrarProductoComponent } from './components/registrar-producto/registrar-producto.component';
-import { ModificarProductoComponent } from './components/modificar-producto/modificar-producto.component'
-
+import { ModificarProductoComponent } from './components/modificar-producto/modificar-producto.component';
+import { RegistrarPanaderiaComponent } from './components/registrar-panaderia/registrar-panaderia.component'
+import { AgmCoreModule } from '@agm/core';
+import { ModificarPanaderiaComponent } from './components/modificar-panaderia/modificar-panaderia.component';
 
 // Rutas
 const appRoutes: Routes = [
@@ -27,7 +29,9 @@ const appRoutes: Routes = [
   {path: 'panaderias', component: ListaPanaderiasComponent},
   { path: 'productos', component: ListaProductosComponent},
   { path: 'registrar', component: RegistrarProductoComponent},
-  { path: 'modificar', component: ModificarProductoComponent}
+  { path: 'modificar', component: ModificarProductoComponent},
+  { path: 'panaderia', component: RegistrarPanaderiaComponent}
+  
 ]
 
 @NgModule({
@@ -36,7 +40,11 @@ const appRoutes: Routes = [
     ListaPanaderiasComponent,
     ListaProductosComponent,
     RegistrarProductoComponent,
-    ModificarProductoComponent
+    ModificarProductoComponent,
+    RegistrarPanaderiaComponent,
+    ModificarPanaderiaComponent
+
+    
   ],
   imports: [
     BrowserModule,
@@ -45,6 +53,9 @@ const appRoutes: Routes = [
     AngularFirestoreModule.enablePersistence(),
     AngularFirestoreModule,
     RouterModule.forRoot(appRoutes),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBrS_Ud0YiFgOLbdRcuSm9M6LYcIJznCUI'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
