@@ -1,6 +1,7 @@
 export class Panaderia {
     constructor(
-        public direccion:string,
+        public latitud:any,
+        public longitud:any,
         public nombre: string
        
     ){}

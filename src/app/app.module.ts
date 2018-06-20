@@ -21,6 +21,7 @@ import { ModificarProductoComponent } from './components/modificar-producto/modi
 import { RegistrarPanaderiaComponent } from './components/registrar-panaderia/registrar-panaderia.component'
 import { AgmCoreModule } from '@agm/core';
 import { ModificarPanaderiaComponent } from './components/modificar-panaderia/modificar-panaderia.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 // Rutas
 const appRoutes: Routes = [
@@ -30,8 +31,8 @@ const appRoutes: Routes = [
   { path: 'productos', component: ListaProductosComponent},
   { path: 'registrar', component: RegistrarProductoComponent},
   { path: 'modificar', component: ModificarProductoComponent},
-  { path: 'panaderia', component: RegistrarPanaderiaComponent}
-  
+  { path: 'panaderia', component: RegistrarPanaderiaComponent},
+  {path:'modificar-panaderia',component:ModificarPanaderiaComponent}
 ]
 
 @NgModule({
@@ -42,7 +43,8 @@ const appRoutes: Routes = [
     RegistrarProductoComponent,
     ModificarProductoComponent,
     RegistrarPanaderiaComponent,
-    ModificarPanaderiaComponent
+    ModificarPanaderiaComponent,
+    NavBarComponent
 
     
   ],

@@ -58,15 +58,31 @@ export class ListaPanaderiasComponent implements OnInit {
            console.log('Error  producto Component: ', err);
            return false;
          })
-
-    
-    
-
-
   }
 
   redireccion(){
     this.router.navigate(['productos']);
   }
 
+  Modificar(nombre){
+    var aux=this.afs.collection("Panaderias",ref => ref.where('nombre', '==',nombre)).snapshotChanges().subscribe(data => {
+      
+      data.map(a=> {
+       const valores=a.payload.doc.data() 
+     const id=a.payload.doc.id
+     const productos=a.payload.doc
+     console.log('payload',a.payload)
+
+    
+     console.log("id de panaderia", id)
+     localStorage.setItem('id',JSON.stringify(id))
+     localStorage.setItem('panaderia',JSON.stringify(valores))
+     this.router.navigate(['modificar-panaderia']);
+  
+     })
+         }, err => {
+           console.log('Error  producto Component: ', err);
+           return false;
+         })
+  }
 }

@@ -9,7 +9,8 @@ import {AngularFirestore,AngularFirestoreCollection,AngularFirestoreDocument} fr
   styleUrls: ['./registrar-panaderia.component.css']
 })
 export class RegistrarPanaderiaComponent implements OnInit {
-  model = new Panaderia('hola','');
+  model = new Panaderia('','','');
+
   lat: number = 10.4806;
   lng: number =-66.9036 ;
   zoom: number =16;
@@ -22,7 +23,7 @@ export class RegistrarPanaderiaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-   this. model = new Panaderia('hola','');
+   this. model = new Panaderia('hola','','');
   }
 
 marker(event){
